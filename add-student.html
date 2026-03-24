@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Student</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>Add Student</header>
+
+<div class="navbar">
+  <a href="dashboard.html">Home</a>
+  <a href="add-student.html">Add Student</a>
+  <a href="students.html">Students</a>
+  <a href="companies.html">Companies</a>
+</div>
+
+<div class="container">
+<div class="card">
+
+<input id="name" placeholder="Name"><br>
+<input id="roll" placeholder="Roll"><br>
+<input id="cgpa" placeholder="CGPA"><br>
+
+<button onclick="add()">Add</button>
+
+</div>
+</div>
+
+<script>
+function add(){
+ let students=JSON.parse(localStorage.getItem("students"))||[];
+
+ students.push({
+  name:name.value,
+  roll:roll.value,
+  cgpa:cgpa.value
+ });
+
+ localStorage.setItem("students",JSON.stringify(students));
+
+ alert("Student Added");
+}
+</script>
+
+</body>
+</html>
